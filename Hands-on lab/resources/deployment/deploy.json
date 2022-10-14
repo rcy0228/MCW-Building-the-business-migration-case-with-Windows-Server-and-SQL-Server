@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.10.61.36676",
-      "templateHash": "6653127986685198893"
+      "templateHash": "2273495248727292594"
     }
   },
   "parameters": {
@@ -24,8 +24,8 @@
     "spokeNamePrefix": "[format('{0}-spoke-', parameters('resourceNameBase'))]",
     "onpremSQLVMNamePrefix": "[format('{0}sql-', variables('onpremNamePrefix'))]",
     "onpremHyperVHostVMNamePrefix": "[format('{0}hyperv-', variables('onpremNamePrefix'))]",
-    "GitHubScriptRepo": "solliancenet/Building-the-business-migration-case-with-Windows-Server-and-SQL-Server",
-    "GitHubScriptRepoBranch": "lab",
+    "GitHubScriptRepo": "microsoft/MCW-Building-the-business-migration-case-with-Windows-Server-and-SQL-Server",
+    "GitHubScriptRepoBranch": "main",
     "GitHubScriptRepoBranchURL": "[format('https://raw.githubusercontent.com/{0}/{1}/Hands-on lab/resources/deployment/', variables('GitHubScriptRepo'), variables('GitHubScriptRepoBranch'))]",
     "HyperVHostConfigArchiveFileName": "create-vm.zip",
     "HyperVHostConfigArchiveScriptName": "create-vm.ps1",

@@ -11,8 +11,8 @@ var spokeNamePrefix = '${resourceNameBase}-spoke-'
 var onpremSQLVMNamePrefix = '${onpremNamePrefix}sql-'
 var onpremHyperVHostVMNamePrefix = '${onpremNamePrefix}hyperv-'
 
-var GitHubScriptRepo = 'solliancenet/Building-the-business-migration-case-with-Windows-Server-and-SQL-Server'
-var GitHubScriptRepoBranch = 'lab'
+var GitHubScriptRepo = 'microsoft/MCW-Building-the-business-migration-case-with-Windows-Server-and-SQL-Server'
+var GitHubScriptRepoBranch = 'main'
 var GitHubScriptRepoBranchURL = 'https://raw.githubusercontent.com/${GitHubScriptRepo}/${GitHubScriptRepoBranch}/Hands-on lab/resources/deployment/'
 
 var HyperVHostConfigArchiveFileName = 'create-vm.zip'
