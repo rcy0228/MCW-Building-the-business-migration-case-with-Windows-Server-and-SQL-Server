@@ -45,17 +45,22 @@ Configuration Main
 		
 			SetScript =
 			{
-                $zipDownload = "https://mcwtest.blob.core.windows.net/deployment/OnPremWinServerVM.zip"
-                $downloadedFile = "C:\OnPremWinServerVM.zip"
-                $vmFolder = "C:\VM"
+                mkdir "C:\git"
+                cd "C:\git"
 
-                Invoke-WebRequest $zipDownload -OutFile $downloadedFile
+                git lfs install --skip-smudge
+                git clone --quiet --single-branch "https://github.com/microsoft/MCW-Building-the-business-migration-case-with-Windows-Server-and-SQL-Server.git"
+                cd "C:\git\MCW-Building-the-business-migration-case-with-Windows-Server-and-SQL-Server\"
+                git lfs pull
+                git lfs install --force
+
+                $downloadedFile = "C:\git\MCW-Building-the-business-migration-case-with-Windows-Server-and-SQL-Server\Hands-on lab\resources\deployment\onprem\OnPremWinServerVM.zip"
+                $vmFolder = "C:\VM"
 
                 Add-Type -assembly "system.io.compression.filesystem"
                 [io.compression.zipfile]::ExtractToDirectory($downloadedFile, $vmFolder)
                 # The following command was used to Zip up the VM files originally
                 # [io.compression.zipfile]::CreateFromDirectory("C:\OnPremWinServerVM", "C:\OnPremWinServerVM.zip")
-
 
                 $NatSwitch = Get-NetAdapter -Name "vEthernet (NAT Switch)"
                 New-NetIPAddress -IPAddress 192.168.0.1 -PrefixLength 24 -InterfaceIndex $NatSwitch.ifIndex
