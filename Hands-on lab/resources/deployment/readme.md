@@ -8,7 +8,13 @@ Select the button below to deploy the existing Tailspin Toys resources for the H
 
 The following resources will be provisioned:
 
-- [TODO]
+- Azure Virtual Networks with VNet Peering
+    - Hub and spoke network in Azure
+    - Simulated on-premises network in Azure
+- Simulated on-premises environment
+    - Azure Virtual Machine with Hyper-V hosting a simulated on-premises Windows server machine
+    - Azure Virtual Machine hosting SQL Server to simulate an on-premises SQL database server
+- Azure Bastion to enable secure Remote Desktop connections to Virtual Machines
 
 ## Notes
 
