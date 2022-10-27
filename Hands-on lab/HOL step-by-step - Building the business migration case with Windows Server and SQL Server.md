@@ -88,57 +88,37 @@ Tailspin Toys needs to migrate their on-premises SQL Server database to Azure SQ
 
 In this exercise, you will go through the steps necessary to migrate Tailspin Toys' on-premises SQL Server database to Azure SQL Managed Instance.
 
-### Task 1: Create subnet and storage account for Azure SQL MI
+### Task 1: Create storage account for Azure SQL MI
 
-1. Sign in to the [Azure Portal](https://portal.azure.com). Ensure that you're using a subscription associated with the same resources you created during the Before the hands-on lab setup.
+1. Go to the **Home** screen in the **Azure Portal**, then select **+ Create a resource**.
 
-2. Within the Azure Portal, navigate to the Resource Group created for this lab, and go to the `tailspin-spoke-vnet` virtual network.
+    ![Create new resource](images/BM-Ex1-T1-S1.png)
 
-3. Under **Settings**, select the **Subnets** link.
+2. Under **Categories**, select **Storage**, then select **Create** for **Storage account** in the list of popular resources.
 
-    ![The tailspin-spoke-vnet Virtual network pane is shown with the Subnets link under Settings highlighted.](images/azure-sql-mi-spoke-vnet-subnets-link.png "Virtual network pane with subnets links highlighted")
+    ![The Azure Marketplace is shown with the Create link highlighted for the Storage account resource.](images/BM-Ex1-T1-S2.png "Create a Storage account resource")
 
-4. Select **+Subnet** to create a new Subnet.
+3. On the **Create a storage account**, enter the following values, then select **Review**:
 
-5. On the **Add subnet** pane, enter the following values to create a Subnet that will be used by the Azure SQL Managed Instance that will be created later:
+    - **Resource group**: Select the resource group `tailspin-rg`.
+    - **Storage account name**: Enter a unique name for the storage account, similar to `tailspinsqlmi`<inject key="DeploymentID/Suffix" />. 
+    - **Region**: Select the same region as that of the resource group-`tailspin-rg`.
 
-    Add subnet pane   - **Name**: `AzureSQLMI` 
-        - **Subnet address range**: `10.2.1.0/24`
-        - **Delegate subnet to a service**: `Microsoft.Sql/managedInstances`
+    ![The Create a storage account pane is shown with the fields highlighted and all values entered.](images/BM-Ex1-T1-S3.png "Create a storage account pane with all values entered")
 
-    ![Add subnet pane is shown with fields entered with desired values for the subnet to add.](images/azure-sql-mi-new-subnet.png "Add subnet pane with values entered")
+4. Select **Create** to create the Storage Account.
+   
+   ![Create Storage Account](images/BM-Ex1-T1-S4.1.png)
 
-6. Select **Save**. The list of Subnets will now look like the following:
+5. Once the Storage Account is created, navigate to it, then select **Containers**. Select **+ Container**.
+   
+   ![The Storage account pane is shown for the newly creates Storage account with the Containers link highlighted under Data storage.](images/BM-Ex1-T1-S5.png "Storage Account with Containers link highlighted")
 
-    ![The Subnets page of the tailspin-spoke-vnet Virtual network pane now shows the list of subnets that have been created.](images/azure-sql-mi-subnets-list.png "List of subnets in the Virtual network")
+6. On the **New container** pane, enter `sql-backup` in the **Name** field, then select **Create**.
 
-7. Go to the **Home** screen in the **Azure Portal**, then select **+ Create a resource**.
+    ![The New container dialog is shown with the Name entered with the Name field and Create button highlighted.](images/BM-Ex1-T1-S6.png "New container")
 
-8. Under **Categories**, select **Storage**, then select **Create** for **Storage account** in the list of popular resources.
-
-    ![The Azure Marketplace is shown with the Create link highlighted for the Storage account resource.](images/2022-10-07-20-33-19.png "Create a Storage account resource")
-
-9. On the **Create a storage account**, enter the following values, then select **Review**:
-
-    - **Resource group**: Select the resource group that you created for this lab, such as `tailspin-rg`.
-    - **Storage account name**: Enter a unique name for the storage account, similar to `tailspinsqlmistorage`. You can add your initials or date to meet uniqueness requirements.
-    - **Region**: Select the Azure Region that was used to create the resource group.
-
-    ![The Create a storage account pane is shown with the fields highlighted and all values entered.](images/azure-portal-create-storage-account-sqlmi.png "Create a storage account pane with all values entered")
-
-10. Select **Create** to create the Storage Account.
-
-11. Once the Storage Account is created, navigate to it, then select **Containers**.
-On the Add subnet pane, enter the following values to create a Subnet
-    ![The Storage account pane is shown for the newly creates Storage account with the Containers link highlighted under Data storage.](images/azure-portal-storage-account-containers-link.png "Storage Account with Containers link highlighted")
-
-12. Select **+ Container**
-
-13. On the **New container** pane, enter `sql-backup` in the **Name** field, then select **Create**.
-
-    ![The New container dialog is shown with the Name entered with the Name field and Create button highlighted.](images/storage-container-sql-backup-new.png "New container")
-
-### Task 2: Create Azure SQL MI
+### Task 2: Review Creation of Azure SQL MI **(Read only)**
 
 1. On the **Home** page within the Azure Portal, towards the top, select **Create a resource**.
 
@@ -189,7 +169,7 @@ On the Add subnet pane, enter the following values to create a Subnet
 
 12. On the **Networking** pane, enter the following values:
 
-    - **Virtual network / subnet**: `tailspin-spoke-vnet/AzureSQLMI`.
+    - **Virtual network / subnet**: `vnet-sqlmi--cus/Management1`.
 
     ![The Networking tab of the Create Azure SQL Managed Instance pane is shown with the tailspin-spoke-vnet/AzureSQLMI subnet selected with the field highlighted.](images/create-azure-sql-mi-networking-values-entered.png "Networking values entered")
 
@@ -197,7 +177,7 @@ On the Add subnet pane, enter the following values to create a Subnet
 
 14. Select **Create**.
 
-    > **Note**: Deploying the new instance of Azure SQL Managed Instance may take about 1 hour to complete. You can continue to Exercise 2, then come back here later to finish Exercise 1.
+    > **Note**: Deploying the new instance of Azure SQL Managed Instance may take about 6 hour to complete. We have already created a *Managed Instance* for you. You can continue from the next task.
 
 ### Task 3: Install Data Migration Assistant
 
