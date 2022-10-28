@@ -155,49 +155,83 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
    
 ### Task 2: Install Data Migration Assistant
 
-1. In the Azure Portal, navigate to the Resource Group for the lab, then navigate to the `tailspin-onprem-sql-vm` virtual machine. This is the simulated on-premises SQL Server VM that contains the database to migrate to Azure SQL MI.
+1. In the Azure Portal, navigate to the Resource Group for the lab i.e, `tailspin-rg` , then navigate to the `tailspin-onprem-sql-vm` virtual machine. This is the simulated on-premises SQL Server VM that contains the database to migrate to Azure SQL MI.
 
-    ![The Virtual machine pane for the Simulated on-premises SQL Server VM is shown in the Azure Portal.](images/azure-portal-onprem-sql-vm.png "Simulated on-premises SQL Server VM")
+    ![The Virtual machine pane for the Simulated on-premises SQL Server VM is shown in the Azure Portal.](images/BM-Ex1-T2-S1.png "Simulated on-premises SQL Server VM")
 
 2. On the left, select **Bastion** under **Operations**.
 
-    ![The Bastion link under Operations is shown.](images/azure-portal-vm-operations-bastion-link.png "Bastion link is highlighted")
+    ![The Bastion link under Operations is shown.](images/BM-Ex1-T2-S2.png "Bastion link is highlighted")
 
 3. Enter the **Username** and **Password**, then select **Connect**.
-
-    ![The Bastion pane of the tailspin-onprem-sql-vm Virtual machine is shown with the Username and Password fields entered and highlighted.](images/azure-portal-sql-vm-bastion-username-password-entered.png "Bastion credentials shown entered")
-
-    > **Note**: When the VM was created the credentials were set up as:
+    
     > - **Username**: `demouser`
     > - **Password**: `demo!pass123`
 
+    ![The Bastion pane of the tailspin-onprem-sql-vm Virtual machine is shown with the Username and Password fields entered and highlighted.](images/BM-Ex1-T2-S3.png "Bastion credentials shown entered")
+
 4. In the **tailspin-onprem-sql-vm** virtual machine, go to **Server Manager**, and select **Local Server**.
 
-    ![The Server Manager window is shown with Local Server selected.](images/server-manager-local-server-highlighted.png "Server Manager with Local Server highlighted")
+    ![The Server Manager window is shown with Local Server selected.](images//BM-Ex1-T2-S4.png "Server Manager with Local Server highlighted")
 
 5. Within **Local Server**, select the `On` text link for the **IE Enhanced Security Configuration** property.
 
-    ![The Local Server pane is shown within Server Manager and the value of On is highlighted for IE Enhanced Security Configuration.](images/server-manager-local-server-ie-enhanced-security-config.png "Server Manager with IE Enhanced Security Configuration highlighted")
+    ![The Local Server pane is shown within Server Manager and the value of On is highlighted for IE Enhanced Security Configuration.](images/BM-Ex1-T2-S5.png "Server Manager with IE Enhanced Security Configuration highlighted")
 
 6. On the **Internet Explorer Enhanced Security Configuration** dialog, select **Off** for **Administrators**, then select **OK**.
 
-    ![The Internet Explorer Enhanced Security Configuration window is shown with the Administrators section having the Off value selected and highlighted.](images/server-manager-ie-enhanced-security-config-administrators-off-property.png "IE Enhanced Security Configuration dialog with Administrators Off property highlighted")
+    ![The Internet Explorer Enhanced Security Configuration window is shown with the Administrators section having the Off value selected and highlighted.](images//BM-Ex1-T2-S6.png "IE Enhanced Security Configuration dialog with Administrators Off property highlighted")
 
-7. In the **tailspin-onprem-sql-vm** virtual machine, open **Internet Explorer** then go to the following link and download the **.NET Framework 4.8 Runtime** installer. This will be needed to install the Microsoft Data Migration Assistant.
+7. In the **tailspin-onprem-sql-vm** virtual machine, open **Internet Explorer** then go to the following link and download the **.NET Framework 4.8 Runtime** installer. This will be needed to install the Microsoft Data Migration Assistant. Select **Run** to run the **.NET Framework 4.8 Runtime** installer.
 
     <https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-web-installer>
+    
+    ![Open Internet Explorer.](images/BM-Ex1-T2-S7.1.png "Internet explorer")
+    ![Enter the download link.](images/BM-Ex1-T2-S7.2.png "Run the .NET Framework")
+    
 
-8. Select **Run** to run the **.NET Framework 4.8 Runtime** installer once it's finished downloading, and follow the prompts to install the .NET Framework.
+8. Once it's finished downloading, and follow the prompts to install the .NET Framework. Accept the license terms and click install.
 
-    ![The .NET Framework 4.8 Setup wizard is shown.](images/2022-10-07-21-14-05.png ".NET Framework 4.8 Setup")
+    ![The .NET Framework 4.8 Setup wizard is shown.](images/BM-Ex1-T2-S8.png ".NET Framework 4.8 Setup")
+    
+9. After the installation is completed on the **Installation is complete** dialogue box click on **Finish**.
 
-9. Using **Internet Explorer**, go to the following link and download the **Microsoft Data Migration Assistant**.
+      ![The .NET Framework 4.8 Setup wizard shows installation is completed.](images/BM-Ex1-T2-S9.png ".NET Framework 4.8 Setup")
+   
+    - You will recieve a pop-up to restart your VM click on **Restart Now**.
+     
+     ![The .NET Framework 4.8 Setup wizard asks for restarting the VM.](images/BM-Ex1-T2-S9.1.png ".NET Framework 4.8 Setup")
 
-    - <https://www.microsoft.com/en-us/download/details.aspx?id=53595>
+10. Using **Internet Explorer**, go to the following link and download the **Microsoft Data Migration Assistant**.
+   
+    <https://www.microsoft.com/en-us/download/details.aspx?id=53595>  
+   
+    - Click on download for **Data Migration Assistant**.
+    
+     ![Enter the DMA download link.](images/BM-Ex1-T2-S10.png "DMA")
+   
+     - Select **Run** to run the **Microsoft Data Migration Assistant** installer.
+    
+     ![ DMA Installer.](images/BM-Ex1-T2-S10.1.png "DMA Run")
 
-10. Select **Run** to run the **Microsoft Data Migration Assistant** installer once it's finished downloading and follow the prompts to install the assistant.
+11. Once it's finished downloading and follow the prompts to install the assistant.
 
-    ![The Microsoft Data Migration Assistant Setup wizard is shown.](images/microsoft-data-migration-assistant-setup-wizard.png "Microsoft Data Migration Assistant Setup wizard")
+    - On **Welcome to the Microsoft Data Migration Assistant Setup Wizard** click **Next**.
+    
+     ![The Microsoft Data Migration Assistant Setup wizard is shown.](images/BM-Ex1-T2-S11.1.png "Microsoft Data Migration Assistant Setup wizard")
+    
+    - Next on the **End-User License Agreement** accept the terms and click on **Next**.
+    
+     ![The Microsoft Data Migration Assistant Setup wizard is shown.](images/BM-Ex1-T2-S11.2.png "Microsoft Data Migration Assistant Setup wizard")
+    
+     - On the **Privacy Statemen**t click on **Install**.  
+
+      ![The Microsoft Data Migration Assistant Setup wizard is shown.](images/BM-Ex1-T2-S11.3.png "Microsoft Data Migration Assistant Setup wizard")
+      
+      - Finally on the **Completed the Microsoft Data Migration Assistant Setup Wizard** click on **Finish**.
+      
+      ![The Microsoft Data Migration Assistant Setup wizard is shown.](images/BM-Ex1-T2-S11.4.png "Microsoft Data Migration Assistant Setup wizard")
+
 
 ### Task 3: Assess on-premises database compatibility
 
