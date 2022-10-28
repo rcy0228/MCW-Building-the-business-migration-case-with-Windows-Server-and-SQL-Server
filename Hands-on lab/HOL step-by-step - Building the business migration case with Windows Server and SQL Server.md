@@ -34,12 +34,11 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Requirements](#requirements)
   - [Before the hands-on lab](#before-the-hands-on-lab)
   - [Exercise 1: SQL database migration](#exercise-1-sql-database-migration)
-    - [Task 1: Create subnet and storage account for Azure SQL MI](#task-1-create-subnet-and-storage-account-for-azure-sql-mi)
-    - [Task 2: Create Azure SQL MI](#task-2-create-azure-sql-mi)
-    - [Task 3: Install Data Migration Assistant](#task-3-install-data-migration-assistant)
-    - [Task 4: Assess on-premises database compatibility](#task-4-assess-on-premises-database-compatibility)
-    - [Task 5: Backup on-premises SQL database](#task-5-backup-on-premises-sql-database)
-    - [Task 6: Migrate database to Azure SQL MI](#task-6-migrate-database-to-azure-sql-mi)
+    - [Task 1: Review Creation of Azure SQL MI **(Read-Only)** ](#task-1-review-creation-of-azure-sql-mi-read-only)
+    - [Task 2: Install Data Migration Assistant](#task-2-install-data-migration-assistant)
+    - [Task 3: Assess on-premises database compatibility](#task-3-assess-on-premises-database-compatibility)
+    - [Task 4: Backup on-premises SQL database](#task-4-backup-on-premises-sql-database)
+    - [Task 5: Migrate database to Azure SQL MI](#task-5-migrate-database-to-azure-sql-mi)
   - [Exercise 2: Create VM to migrate web application](#exercise-2-create-vm-to-migrate-web-application)
     - [Task 1: Create Windows Server 2022 Azure Edition VM for application hosting](#task-1-create-windows-server-2022-azure-edition-vm-for-application-hosting)
     - [Task 2: Check remote desktop access](#task-2-check-remote-desktop-access)
@@ -88,37 +87,7 @@ Tailspin Toys needs to migrate their on-premises SQL Server database to Azure SQ
 
 In this exercise, you will go through the steps necessary to migrate Tailspin Toys' on-premises SQL Server database to Azure SQL Managed Instance.
 
-### Task 1: Create storage account for Azure SQL MI
-
-1. Go to the **Home** screen in the **Azure Portal**, then select **+ Create a resource**.
-
-    ![Create new resource](images/BM-Ex1-T1-S1.png)
-
-2. Under **Categories**, select **Storage**, then select **Create** for **Storage account** in the list of popular resources.
-
-    ![The Azure Marketplace is shown with the Create link highlighted for the Storage account resource.](images/BM-Ex1-T1-S2.png "Create a Storage account resource")
-
-3. On the **Create a storage account**, enter the following values, then select **Review**:
-
-    - **Resource group**: Select the resource group `tailspin-rg`.
-    - **Storage account name**: Enter a unique name for the storage account, similar to `tailspinsqlmi`<inject key="DeploymentID/Suffix" />. 
-    - **Region**: Select the same region as that of the resource group-`tailspin-rg`.
-
-    ![The Create a storage account pane is shown with the fields highlighted and all values entered.](images/BM-Ex1-T1-S3.png "Create a storage account pane with all values entered")
-
-4. Select **Create** to create the Storage Account.
-   
-   ![Create Storage Account](images/BM-Ex1-T1-S4.1.png)
-
-5. Once the Storage Account is created, navigate to it, then select **Containers**. Select **+ Container**.
-   
-   ![The Storage account pane is shown for the newly creates Storage account with the Containers link highlighted under Data storage.](images/BM-Ex1-T1-S5.png "Storage Account with Containers link highlighted")
-
-6. On the **New container** pane, enter `sql-backup` in the **Name** field, then select **Create**.
-
-    ![The New container dialog is shown with the Name entered with the Name field and Create button highlighted.](images/BM-Ex1-T1-S6.png "New container")
-
-### Task 2: Review Creation of Azure SQL MI **(Read only)**
+### Task 1: Review Creation of Azure SQL MI **(Read-Only)**
 
 1. On the **Home** page within the Azure Portal, towards the top, select **Create a resource**.
 
@@ -179,7 +148,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
     > **Note**: Deploying the new instance of Azure SQL Managed Instance may take about 6 hour to complete. We have already created a *Managed Instance* for you. You can continue from the next task.
 
-### Task 3: Install Data Migration Assistant
+### Task 2: Install Data Migration Assistant
 
 1. In the Azure Portal, navigate to the Resource Group for the lab, then navigate to the `tailspin-onprem-sql-vm` virtual machine. This is the simulated on-premises SQL Server VM that contains the database to migrate to Azure SQL MI.
 
@@ -225,7 +194,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
     ![The Microsoft Data Migration Assistant Setup wizard is shown.](images/microsoft-data-migration-assistant-setup-wizard.png "Microsoft Data Migration Assistant Setup wizard")
 
-### Task 4: Assess on-premises database compatibility
+### Task 3: Assess on-premises database compatibility
 
 1. Run the **Microsoft Data Migration Assistant** that was previously installed.
 
@@ -271,7 +240,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
 10. The Data Migration Assessment is complete. If there were feature parity or compatibility issues found, then you would need to address those before migrating the SQL Server database to Azure SQL MI.
 
-### Task 5: Backup on-premises SQL database
+### Task 4: Backup on-premises SQL database
 
 1. In the **tailspin-onprem-sql-vm** virtual machine, open the **Start menu**, then type **Azure Data Studio** to search the application, then select it to run **Azure Data Studio**.
 
@@ -340,7 +309,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
     ![The Upload Files dialog box is shown with the sql database backup file selected within the Selected filed field.](images/azure-storage-explorer-upload-files.png "Storage Explorer Upload File dialog with database backup file selected")
 
-### Task 6: Migrate database to Azure SQL MI
+### Task 5: Migrate database to Azure SQL MI
 
 1. Within **Azure Data Studio**, under the list of servers, right-click the **localhost, WideWorldImporters** server, then select **Manage**.
 
