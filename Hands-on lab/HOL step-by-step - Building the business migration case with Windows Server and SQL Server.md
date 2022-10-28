@@ -375,45 +375,41 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
 1. Within **Azure Data Studio**, under the list of servers, right-click the **localhost, WideWorldImporters** server, then select **Manage**.
 
-    ![localhost server is highlighted with right-click menu shown with the Manage option highlighted.](images/azure-data-studio-servers-right-click-manage-shown.png "WideWorldImporters server with right-click menu shown and Manage option is highlighted")
+    ![localhost server is highlighted with right-click menu shown with the Manage option highlighted.](images/BM-Ex1-T4-S7.png "WideWorldImporters server with right-click menu shown and Manage option is highlighted")
 
-2. Select the **Azure SQL Migration** option.
+2. Select the **Azure SQL Migration** option. Select the **Migrate to Azure SQL** button.
 
-    ![The Manage server pane is shown with the Azure SQL Migration option highlighted.](images/azure-data-studio-manage-server-pane.png "Manage server pane with Azure SQL Migration option highlighted")
+    ![The Manage server pane is shown with the Azure SQL Migration option highlighted.](images/BM-Ex1-T5-S1.png "Manage server pane with Azure SQL Migration option highlighted")
 
-3. Select the **Migrate to Azure SQL** button.
+3. In **Step 1: Database for assessment**, select the **WideWorldImporters** database, then select **Next**.
 
-    ![The Azure SQL Migration pane is shown with the Migrate to Azure SQL button highlighted.](images/azure-data-studio-azure-sql-migration-migrate-button.png "Azure SQL Migration with Migrate to Azure SQL button highlighted")
+    ![Step 1 Database for assessment step is shown with the WideWorldImporters database selected for assessment.](images/BM-Ex1-T5-S2.png "Step 1: Databases for assessment")
 
-4. In **Step 1: Database for assessment**, select the **WideWorldImporters** database, then select **Next**.
+4. In **Step 2: Assessment results and recommendations**, select the **Azure SQL Managed Instance** option.
 
-    ![Step 1 Database for assessment step is shown with the WideWorldImporters database selected for assessment.](images/azure-data-studio-migrate-step-1.png "Step 1: Databases for assessment")
+    ![Step 2 Assessment results and recommendations are shown with the Azure SQL target option of Azure SQL Managed Instance selected.](images/BM-Ex1-T5-S3.png "Step 2: Assessment results and recommendations")
 
-5. In **Step 2: Assessment results and recommendations**, select the **Azure SQL Managed Instance** option.
+5. Scroll down and select the **View/Select** button to select a database.
 
-    ![Step 2 Assessment results and recommendations are shown with the Azure SQL target option of Azure SQL Managed Instance selected.](images/azure-data-studio-migrate-step-2-azuresqlmi-selected.png "Step 2: Assessment results and recommendations")
+    ![The View/Select button to choose the Azure SQL Managed Instance to migrate to is highlighted.](images/BM-Ex1-T5-S4.png "View/Select Azure SQL Managed Instance button")
 
-6. Scroll down and select the **View/Select** button to select a database.
+6. Select the **WideWorldImporters** database, and you should see a message stating "`No issues for migrating to Azure SQL Managed Instance.`", then select the **Select** button.
 
-    ![The View/Select button to choose the Azure SQL Managed Instance to migrate to is highlighted.](images/2022-10-13-14-36-48.png "View/Select Azure SQL Managed Instance button")
+    ![WideWorldImporters database selected and 'no issues' message shown.](images/BM-Ex1-T5-S5.png "No issues found message is shown")
 
-7. Select the **WideWorldImporters** database, and you should see a message stating "`No issues for migrating to Azure SQL Managed Instance.`", then select the **Select** button.
+7. Verify the **Azure SQL Managed Instance** target is selected, notice that it now shows **1 of 1 databases selected**, then select **Next**.
 
-    ![WideWorldImporters database selected and 'no issues' message shown.](images/2022-09-23-15-01-58.png "No issues found message is shown")
+    ![Step 2 Assessment results and recommendations are shown with Azure SQL Managed Instance option selected.](images/BM-Ex1-T5-S6.png "Step 2: Assessment results and recommendations")
 
-8. Verify the **Azure SQL Managed Instance** target is selected, notice that it now shows **1 of 1 databases selected**, then select **Next**.
+8. In **Step 3: Azure SQL target**, enter connection information to your Azure Subscription and for the **Azure SQL Manage Instance** resource that was previously created, then select **Next**.
 
-    ![Step 2 Assessment results and recommendations are shown with Azure SQL Managed Instance option selected.](images/azure-data-studio-migrate-step-2.png "Step 2: Assessment results and recommendations")
+    ![Step 3 Azure SQL target is shown with the Azure account entered and the Location, Resource group, and Azure SQL Managed Instance resource selected as the target for the migration.](images/BM-Ex1-T5-S7.png "Step 3: Azure SQL target")
 
-9. In **Step 3: Azure SQL target**, enter connection information to your Azure Subscription and for the **Azure SQL Manage Instance** resource that was previously created, then select **Next**.
+9. On **Step 4: Migration mode**, keep **Online migration** selected, then select **Next**.
 
-    ![Step 3 Azure SQL target is shown with the Azure account entered and the Location, Resource group, and Azure SQL Managed Instance resource selected as the target for the migration.](images/azure-data-studio-migrate-step-3.png "Step 3: Azure SQL target")
+    ![Step 4 Migration mode is shown with the Online migration option selected.](images/BM-Ex1-T5-S8.png "Step 4: Migration mode")
 
-10. On **Step 4: Migration mode**, keep **Online migration** selected, then select **Next**.
-
-    ![Step 4 Migration mode is shown with the Online migration option selected.](images/azure-data-studio-migrate-step-4.png "Step 4: Migration mode")
-
-11. In **Step 5: Database backup**, select **My database backups are in an Azure Storage Blob Container**, select the Azure Storage Account and container created previously, then select **Next**.
+10. In **Step 5: Database backup**, select **My database backups are in an Azure Storage Blob Container**, select the Azure Storage Account and container created previously, then select **Next**.
 
     ![Step 5 Database backup is shown with the 'My database backups are in an Azure Storage Blob Container' option selected, with the Storage account and sql-backup container selected for the location of the source database.](images/azure-data-studio-migrate-step-5.png "Step 5: Database backup")
 
