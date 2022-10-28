@@ -88,6 +88,8 @@ Tailspin Toys needs to migrate their on-premises SQL Server database to Azure SQ
 In this exercise, you will go through the steps necessary to migrate Tailspin Toys' on-premises SQL Server database to Azure SQL Managed Instance.
 
 ### Task 1: Review Creation of Azure SQL MI **(Read-Only)**
+ 
+  > **Note**: This is a **Read-Only** task. As Deploying the new instance of Azure SQL Managed Instance may take about 6 hour to complete. We have already created a *Managed Instance* for you. You can review this task to understand how the Azure Managed Instance is created and continue from the next task.
 
 1. On the **Home** page within the Azure Portal, towards the top, select **Create a resource**.
 
@@ -146,8 +148,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
 14. Select **Create**.
 
-    > **Note**: Deploying the new instance of Azure SQL Managed Instance may take about 6 hour to complete. We have already created a *Managed Instance* for you. You can continue from the next task.
-
+   
 ### Task 2: Install Data Migration Assistant
 
 1. In the Azure Portal, navigate to the Resource Group for the lab, then navigate to the `tailspin-onprem-sql-vm` virtual machine. This is the simulated on-premises SQL Server VM that contains the database to migrate to Azure SQL MI.
