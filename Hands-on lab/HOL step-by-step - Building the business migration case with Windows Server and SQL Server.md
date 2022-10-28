@@ -235,9 +235,9 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
 ### Task 3: Assess on-premises database compatibility
 
-1. Run the **Microsoft Data Migration Assistant** that was previously installed.
+1. On the **tailspin-onprem-sql-vm** virtual machine go to start and serch for **Microsoft Data Migration Assistant** that was previously installed and run.
 
-    ![The Data Migration Assistant application is shown.](images/ms-data-migration-assistant-windows.png "Data Migration Assistant")
+   ![The Data Migration Assistant application is shown.](images/BM-Ex1-T3-S1.png "Data Migration Assistant")
 
 2. On the left, select the Plus sign (`+`) button to create a new project, and enter the following values, then select **Create**.
 
@@ -247,37 +247,34 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
     - **Source server type**: SQL Server
     - **Target server type**: Azure SQL Database Managed Instance
 
-    ![The New project dialog is shown with the required values entered in the fields.](images/ms-data-migration-assistant-new-project.png "Data Migration Assistant New project dialog with values entered")
+    ![The New project dialog is shown with the required values entered in the fields.](images/BM-Ex1-T3-S2.png "Data Migration Assistant New project dialog with values entered")
 
 3. On the **Options** tab, ensure the **Check database compatibility** and **Check feature parity** report types are selected, then select **Next**.
 
-    ![The Options step is shown with Check database compatibility and Check feature parity options selected.](images/2022-10-07-21-17-11.png "Data Migration Assistant Options pane")
+    ![The Options step is shown with Check database compatibility and Check feature parity options selected.](images/BM-Ex1-T3-S3.png "Data Migration Assistant Options pane")
 
 4. On the **Connect to a server** prompt, enter `localhost` for the     **Server name**, and check the **Trust server certificate** option, then select **Connect**.
 
-    ![The Connect to a server dialog box is shown with the values entered to connect to localhost and to trust the server certificate.](images/ms-data-migration-assistant-assessment-connect-to-server-localhost.png "Connect to a server configured for localhost")
+    ![The Connect to a server dialog box is shown with the values entered to connect to localhost and to trust the server certificate.](images/BM-Ex1-T3-S4.png "Connect to a server configured for localhost")
 
 5. On the **Add sources** prompt, select the **WideWorldImporters** database, then select **Add**.
 
-    ![The Add sources dialog box is shown with the WideWorldImporters database selected.](images/2022-10-07-21-18-32.png "Add sources with WideWorldImporters database selected")
+    ![The Add sources dialog box is shown with the WideWorldImporters database selected.](images/BM-Ex1-T3-S5.png "Add sources with WideWorldImporters database selected")
 
 6. Select **Start Assessment** in the lower right.
 
-    ![The Select sources step is shown with the WideWorldImporters database shown as previously selected and the Start Assessment button is highlighted.](images/ms-data-migration-assistant-assessment-start-assessment-button.png "Data Migration Assistant with the Start Assessment button highlighted")
+    ![The Select sources step is shown with the WideWorldImporters database shown as previously selected and the Start Assessment button is highlighted.](images/BM-Ex1-T3-S6.png "Data Migration Assistant with the Start Assessment button highlighted")
 
 7. On the **Review results** pane, you should see a message that states "**There are no feature parity issues with your server instance.**"
 
-    ![The Review results step is shown with the 'There are no feature parity issues with your server instance' message shown.](images/ms-data-migration-assistant-assessment-no-feature-parity-issues.png "Data Migration Assistant showing there are no feature parity issues")
+    ![The Review results step is shown with the 'There are no feature parity issues with your server instance' message shown.](images/BM-Ex1-T3-S7.png "Data Migration Assistant showing there are no feature parity issues")
 
-8. On the top left of the **Review results** pane, select **Compatibility issues**.
+8. On the top left of the **Review results** pane, select **Compatibility issues**. On the **Review results** pane, you should see a message that "**There are no compatibility issues with your database**".
 
-    ![The Compatibility issues option is selected on the Review results pane.](images/ms-data-migration-assistant-assessment-no-compatibility-issues-selected.png "Compatibility issues selected")
 
-9. On the **Review results** pane, you should see a message that "**There are no compatibility issues with your database**".
+    ![The Compatibility issues option is selected on the Review results pane.](images/BM-Ex1-T3-S8.png "Compatibility issues selected")
 
-    ![The Review results pane is shown with Compatibility issues selected and showing the 'There are no compatibility issues with your database' message shown.](images/ms-data-migration-assistant-assessment-no-compatibility-issues.png "Data Migration Assistant showing there are no compatibility issues")
-
-10. The Data Migration Assessment is complete. If there were feature parity or compatibility issues found, then you would need to address those before migrating the SQL Server database to Azure SQL MI.
+9. The Data Migration Assessment is complete. If there were feature parity or compatibility issues found, then you would need to address those before migrating the SQL Server database to Azure SQL MI.
 
 ### Task 4: Backup on-premises SQL database
 
