@@ -137,8 +137,8 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
     > **Note**: You can provide the following credentials
         
-         **Username**: `demouser`
-         **Password**: `demo!pass1234567`.
+         Username: demouser
+         Password: demo!pass1234567
 
      ![The Authentication section is shown with the Managed Instance admin login and Password fields entered and highlighted.](images/BM-Ex1-T1-S7.1.png "Authentication values are entered")
 
