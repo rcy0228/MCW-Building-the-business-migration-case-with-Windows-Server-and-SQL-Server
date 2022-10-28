@@ -235,7 +235,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
 ### Task 3: Assess on-premises database compatibility
 
-1. On the **tailspin-onprem-sql-vm** virtual machine go to start and serch for **Microsoft Data Migration Assistant** that was previously installed and run.
+1. In the **tailspin-onprem-sql-vm** virtual machine, open the **Start menu**, then type **Microsoft Data Migration Assistant** to search the application, then select it to run.
 
    ![The Data Migration Assistant application is shown.](images/BM-Ex1-T3-S1.png "Data Migration Assistant")
 
@@ -280,23 +280,29 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
 1. In the **tailspin-onprem-sql-vm** virtual machine, open the **Start menu**, then type **Azure Data Studio** to search the application, then select it to run **Azure Data Studio**.
 
-    ![The Search results in the Start menu show a search for Azure Data Studio.](images/win-start-menu-search-azure-data-studio.png "Azure Data Studio in Start menu search")
+    ![The Search results in the Start menu show a search for Azure Data Studio.](images/BM-Ex1-T4-S1.png "Azure Data Studio in Start menu search")
 
 2. On the left, select the **Extensions** tab, then select the **Azure SQL Migration** extension and install it.
 
-    ![Azure Data Studio is shown displaying the Extensions pane with the Azure SQL Migration extension selected and the Install button is highlighted.](images/azure-data-studio-extensions-azure-sql-migration.png "Azure SQL Migration extension highlighted")
-
+    ![Azure Data Studio is shown displaying the Extensions pane with the Azure SQL Migration extension selected and the Install button is highlighted.](images/BM-Ex1-T4-S2.png "Azure SQL Migration extension highlighted")
+ 
+   > **Note**: If you recive an error Unable to install the extention. Update your Azure Data Studio and reperform Step 2. 
+     
+    ![Error installing the SQL Migration extention.](images/BM-Ex1-T4-S2-Note1.png "Azure SQL Migration extension highlighted")
+    ![Error installing the SQL Migration extention.](images/BM-Ex1-T4-S2-Note2.png "Azure SQL Migration extension highlighted")
+ 
+  
 3. Next, you need to enable Preview Features within Azure Data Studio. Select the **Manage** icon (shown as the Gear in the lower left corner of Azure Data Studio) and select **Settings**.
 
-    ![The Manage menu is shown with the Settings option highlighted.](images/azure-data-studio-manage-menu-settings.png "The manage menu open with Settings highlighted")
+     ![The Manage menu is shown with the Settings option highlighted.](images/BM-Ex1-T4-S3.png "The manage menu open with Settings highlighted")
 
 4. On the **Settings** pane, type **Enable Preview Features** in the search box at the top, then check the **Enable unreleased preview features** box for the **Workbench: Enable Preview Features** option that shows in the search results. This will autosave.
 
-    ![The Settings pane is shown with search results for Enable Preview Features showing the Enable unreleased preview features option selected.](images/azure-data-studio-preview-features-enabled.png "Azure Data Studio settings pane with Preview Features enabled")
+     ![The Settings pane is shown with search results for Enable Preview Features showing the Enable unreleased preview features option selected.](images/BM-Ex1-T4-S4.png "Azure Data Studio settings pane with Preview Features enabled")
 
 5. Next, let's connect to the on-premises SQL Server. Select the **Connections** tab on the left side of Azure Data Studio, then select **New Connection**.
 
-    ![The Connections pane is shown with the New Connection button highlighted.](images/azure-data-studio-connections-tab-new-connection-button.png "Azure Data Studio connections tab with New Connection button shown")
+    ![The Connections pane is shown with the New Connection button highlighted.](images/BM-Ex1-T4-S5.png "Azure Data Studio connections tab with New Connection button shown")
 
 6. On the **Connection** pane, enter the following values to connect to the on-premises SQL database, then select **Connect**:
 
@@ -305,45 +311,65 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
     - **Authentication type**: Windows Authentication
     - **Database**: `WideWorldImporters`
 
-    ![The Connection Details pane is shown with values entered and fields highlighted.](images/azure-data-studio-connection-pane-values-entered.png "Azure Data Studio with Connection pane shown having all values entered")
+    ![The Connection Details pane is shown with values entered and fields highlighted.](images/BM-Ex1-T4-S6.png "Azure Data Studio with Connection pane shown having all values entered")
 
 7. In the list of servers, right-click the **localhost, WideWorldImporters** server, then select **Manage**.
 
-    ![The right-click menu for the 'localhost, WideWorldImporters' server is shown with the Manage option highlighted.](images/azure-data-studio-servers-right-click-manage-shown.png "WideWorldImporters server with right-click menu shown and Manage option highlighted")
+    ![The right-click menu for the 'localhost, WideWorldImporters' server is shown with the Manage option highlighted.](images/BM-Ex1-T4-S7.png "WideWorldImporters server with right-click menu shown and Manage option highlighted")
 
 8. Select **Backup**.
 
-    ![The Manage page for the database is shown with the Backup button highlighted.](images/azure-data-studio-database-manage-backup-button.png "Manage database with Backup button highlighted")
+    ![The Manage page for the database is shown with the Backup button highlighted.](images/BM-Ex1-T4-S8.png "Manage database with Backup button highlighted")
 
 9. On the **Backup database** pane, make sure the **Backup type** is set to **Full**, select the **Reliability** option to **Perform checksum before writing to media**, then make a note of the location of the **Backup files**, and select **Backup**.
 
-    ![The Backup database dialog box is shown with the Backup type set to Full and the Reliability set as desired.](images/azure-data-studio-backup-full.png "Backup database pane")
+    ![The Backup database dialog box is shown with the Backup type set to Full and the Reliability set as desired.](images/BM-Ex1-T4-S9.png "Backup database pane")
 
-10. Open **Internet Explorer**, navigate to the following URL, download **Microsoft Azure Storage Explorer**, and install it.
+10. Open **Internet Explorer**, navigate to the following URL.
 
     <https://azure.microsoft.com/en-us/products/storage/storage-explorer/#overview>
+    
+    - Scroll to the bottom of the page and click download **Microsoft Azure Storage Explorer**.
+    
+    ![Download Azure Storage Explorer.](images/BM-Ex1-T4-S10.1.png "Microsoft Azure Storage Explorer Setup")
+    
+    - Click **Run** on the installer pop-up.
+    
+    ![Download Azure Storage Explorer.](images/BM-Ex1-T4-S10.2.png "Microsoft Azure Storage Explorer Setup")
+     
+     - On the **Setup-Microsoft Azure Storage Explorer** wizard accept the License agreement and leave all settings default and install.  
 
-    ![The Microsoft Azure Storage Explorer Setup wizard is shown.](images/2022-10-07-21-22-14.png "Microsoft Azure Storage Explorer Setup")
+    ![The Microsoft Azure Storage Explorer Setup wizard is shown.](images/BM-Ex1-T4-S10.3.png "Microsoft Azure Storage Explorer Setup")
 
 11. Launch **Microsoft Azure Storage Explorer**.
 
 12. Select **Sign in with Azure**.
 
-    ![The Azure Storage Explorer window is shown with the Sign in with Azure button highlighted.](images/azure-storage-explorer-with-sign-in-azure-highlighted.png "Azure Storage Explorer Sign in with Azure")
+    ![The Azure Storage Explorer window is shown with the Sign in with Azure button highlighted.](images/BM-Ex1-T4-S12.png "Azure Storage Explorer Sign in with Azure")
 
-13. Sign in with your **Microsoft Account**.
+13. In the **Select Azure Environment** select **Azure**  for **Which Azure environment will you use to sign in?** and click **Next**.
+     
+     ![The Azure Storage Explorer window is shown with the Sign in with Azure button highlighted.](images/BM-Ex1-T4-S13.png "Azure Storage Explorer Sign in with Azure")
 
-14. In the **Explorer** pane, expand the Azure Subscription, locate the Storage Account that was previously created (named similar to `tailspinsqlmistorage`), then expand **Blob Container** and select the **sql-backup** container.
+    - Sign in to **Microsoft Account** using your ODL-user.
 
-    ![Storage Explorer is displaying the Storage Accounts list with the previously created storage account and the nested Blob Containers tree expanded with the sql-backup container selected.](images/azure-storage-explorer-tailspinsqlmistorage-container-expanded.png "Storage Explorer showing the SQL MI backup storage account expanded")
+    ![The Azure Storage Explorer window is shown with the Sign in with Azure button highlighted.](images/BM-Ex1-T4-S13.1.png "Azure Storage Explorer Sign in with Azure")
+   
+    - You will recive the following message after successfully logging in.
+   
+     ![The Azure Storage Explorer window is shown with the Sign in with Azure button highlighted.](images/BM-Ex1-T4-S13.2.png "Azure Storage Explorer Sign in with Azure")
+
+14. In the **Explorer** pane, expand the Azure Subscription, locate the Storage Account that was previously created (named similar to `tailspinsqlmistore`), then expand **Blob Container** and select the **sql-backup** container.
+
+    ![Storage Explorer is displaying the Storage Accounts list with the previously created storage account and the nested Blob Containers tree expanded with the sql-backup container selected.](images/BM-Ex1-T4-S14.png "Storage Explorer showing the SQL MI backup storage account expanded")
 
 15. In the **sql-backup** container pane, select **Upload**, then select **Upload Files...**.
 
-    ![The Upload button menu is shown with the Upload files option highlighted.](images/azure-storage-explorer-tailspinsqlmistorage-upload-button.png "Storage Explorer with Upload button highlighted and menu for Upload files showing")
+    ![The Upload button menu is shown with the Upload files option highlighted.](images/BM-Ex1-T4-S15.png "Storage Explorer with Upload button highlighted and menu for Upload files showing")
 
-16. In the **Upload Files** dialog, in the **Selected files** field, select the **Database Backup File** (`.bak`) for the **WideWorldImporters** database that was previously created, then select **Upload**.
+16. In the **Upload Files** dialog, in the **Selected files** field, select the **Database Backup File** (`.bak`) for the **WideWorldImporters** database that was previously created (C:\Backup), then select **Upload**.
 
-    ![The Upload Files dialog box is shown with the sql database backup file selected within the Selected filed field.](images/azure-storage-explorer-upload-files.png "Storage Explorer Upload File dialog with database backup file selected")
+    ![The Upload Files dialog box is shown with the sql database backup file selected within the Selected filed field.](images/BM-Ex1-T4-S16.png "Storage Explorer Upload File dialog with database backup file selected")
 
 ### Task 5: Migrate database to Azure SQL MI
 
