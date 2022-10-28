@@ -101,7 +101,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
 3. Select **Create**.
 
-      ![Create Managed Instance.](images/BM-Ex1-T1-S3.png "Azure SQL MI in Azure Marketplace")
+     ![Create Managed Instance.](images/BM-Ex1-T1-S3.png "Azure SQL MI in Azure Marketplace")
 
 4. On the **Create Azure SQL Managed Instance** pane, set the following values:
 
@@ -110,11 +110,11 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
     - **Managed Instance name**: Enter a unique name, such as `sqlmi--cus`.
     - **Region**: Select Region same as that of the resource group.
 
-    ![The Create Azure SQL Managed Instance pane is shown with fields highlighted and all values entered.](images/BM-Ex1-T1-S4.png "Create Azure SQL Managed Instance pane")
+     ![The Create Azure SQL Managed Instance pane is shown with fields highlighted and all values entered.](images/BM-Ex1-T1-S4.png "Create Azure SQL Managed Instance pane")
 
 5. For **Compute + storage**, select **Configure Managed Instance**.
 
-    ![The Compute + storage section of the Create Azure SQL Managed Instance pane is shown with the Configure Managed Instance link highlighted.](images/BM-Ex1-T1-S5.png "Compute + storage section with Configure Managed Instance link highlighted")
+     ![The Compute + storage section of the Create Azure SQL Managed Instance pane is shown with the Configure Managed Instance link highlighted.](images/BM-Ex1-T1-S5.png "Compute + storage section with Configure Managed Instance link highlighted")
 
 6. For the **Compute + storage** configured select the following values:
 
@@ -123,7 +123,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
     - **vCores**: 8 vCores
     - **Storage in GB**: 64 GB
 
-    ![The Compute + storage pane is shown with necessary values selected and highlighted.](images/BM-Ex1-T1-S6.png "Compute + storage pane with values entered")
+     ![The Compute + storage pane is shown with necessary values selected and highlighted.](images/BM-Ex1-T1-S6.png "Compute + storage pane with values entered")
 
 7. Select **Apply**.
 
@@ -140,17 +140,17 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
          **Username**: `demouser`
          **Password**: `demo!pass1234567`.
 
-    ![The Authentication section is shown with the Managed Instance admin login and Password fields entered and highlighted.](images/BM-Ex1-T1-S7.1.png "Authentication values are entered")
+     ![The Authentication section is shown with the Managed Instance admin login and Password fields entered and highlighted.](images/BM-Ex1-T1-S7.1.png "Authentication values are entered")
 
 12. On the **Networking** pane, enter the following value and then select **Review + create**.
 
     - **Virtual network / subnet**: `vnet-sqlmi--cus/Management`. 
 
-    ![The Networking tab of the Create Azure SQL Managed Instance pane is shown with the tailspin-spoke-vnet/AzureSQLMI subnet selected with the field highlighted.](images/BM-Ex1-T1-S8.png "Networking values entered")
+     ![The Networking tab of the Create Azure SQL Managed Instance pane is shown with the tailspin-spoke-vnet/AzureSQLMI subnet selected with the field highlighted.](images/BM-Ex1-T1-S8.png "Networking values entered")
 
 13. Select **Create**.
 
- ![create Managed Instance.](images/BM-Ex1-T1-S9.png "Create Managed Insatnce")
+     ![create Managed Instance.](images/BM-Ex1-T1-S9.png "Create Managed Insatnce")
 
    
 ### Task 2: Install Data Migration Assistant
