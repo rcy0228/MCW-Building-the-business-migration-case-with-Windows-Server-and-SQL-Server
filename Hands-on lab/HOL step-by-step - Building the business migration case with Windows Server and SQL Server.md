@@ -393,7 +393,7 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
     ![The View/Select button to choose the Azure SQL Managed Instance to migrate to is highlighted.](images/BM-Ex1-T5-S6.png "View/Select Azure SQL Managed Instance button")
 
-6. Select the **WideWorldImporters** database, and you should see a message stating "`No issues for migrating to Azure SQL Managed Instance.`", then select the **Select** button.
+6. Select the **WideWorldImporters** database, and you should see a message stating `No issues for migrating to Azure SQL Managed Instance`., then select the **Select** button.
 
     ![WideWorldImporters database selected and 'no issues' message shown.](images/BM-Ex1-T5-S7.png "No issues found message is shown")
 
@@ -401,68 +401,106 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
     ![Step 2 Assessment results and recommendations are shown with Azure SQL Managed Instance option selected.](images/BM-Ex1-T5-S8.png "Step 2: Assessment results and recommendations")
 
-8. In **Step 3: Azure SQL target**, enter connection information to your Azure Subscription and for the **Azure SQL Manage Instance** resource that was previously created, then select **Next**.
+8. In **Step 3: Azure SQL target**, enter connection information to your Azure Subscription by first clicking on **link account**.
 
-    ![Step 3 Azure SQL target is shown with the Azure account entered and the Location, Resource group, and Azure SQL Managed Instance resource selected as the target for the migration.](images/BM-Ex1-T5-S7.png "Step 3: Azure SQL target")
+    ![link azure account.](images/BM-Ex1-T5-Step8.1.png "linking azure account")
 
-9. On **Step 4: Migration mode**, keep **Online migration** selected, then select **Next**.
+9. On the **linked account** pane select **Add an account**.
+    
+    ![add azure account.](images/BM-Ex1-T5-Step8.2.png "linking azure account")
+    
+10. Sign into your Azure account using the credentials provided in the **Environment details** page.
 
-    ![Step 4 Migration mode is shown with the Online migration option selected.](images/BM-Ex1-T5-S8.png "Step 4: Migration mode")
+      ![add azure account.](images/BM-Ex1-T5-Step8.3.png "linking azure account")
+      
+     - Once logged in successfully you will revice **Your account was added successfully!** message on the browser. 
+       
+     ![add azure account.](images/BM-Ex1-T5-Step8.4.png "linking azure account")
 
-10. In **Step 5: Database backup**, select **My database backups are in an Azure Storage Blob Container**, select the Azure Storage Account and container created previously, then select **Next**.
+11. Back on the Data studio,  **Linked accounts** select the Azure account that was added and **Close**.
+ 
+       ![add azure account.](images/BM-Ex1-T5-Step8.5.png "linking azure account") 
 
-    ![Step 5 Database backup is shown with the 'My database backups are in an Azure Storage Blob Container' option selected, with the Storage account and sql-backup container selected for the location of the source database.](images/azure-data-studio-migrate-step-5.png "Step 5: Database backup")
+12.  Now for **Step 3: Azure SQL target** enter the following connection information, then select **Next**.
+     
+       - **Subcription**: `Azure Labs H-02`
+       - **Location**: `Central US`
+       - **Resource group**: `SQLMI-Shared-RG`
+       - **Azure SQL Managed Insatnce**: `sqlmi--cus`
 
-12. In **Step 6: Azure Database Migration Service**, select **Create new** under **Azure Database Migration Service**.
+       ![Step 3 Azure SQL target is shown with the Azure account entered and the Location, Resource group, and Azure SQL Managed Instance resource selected as the target for the migration.](images/BM-Ex1-T5-Step8.6.1.png "Step 3: Azure SQL target")
 
-    ![Step 6 Azure Database Migration Service is shown with the Create new link under Azure Database Migration Service highlighted.](images/2022-10-07-21-25-58.png "Step 6 Azure Database Migration Service")
+13. On **Step 4: Migration mode**, keep **Online migration** selected, then select **Next**.
 
-13. In the **Create Azure Database Migration Service** pane, enter the following values, then select **Create**.
+    ![Step 4 Migration mode is shown with the Online migration option selected.](images/BM-Ex1-T5-Step9.png "Step 4: Migration mode")
 
-    - **Resource group**: Select the Resource Group for this lab, for example: `tailspin-rg`.
+14. In **Step 5: Database backup**, select **My database backups are in an Azure Storage Blob Container**, provide the following details and then select **Next**.
+ 
+    - **Target database name**: `WideWorldImporters`
+    - **Resource group**: `tailspin-rg`
+    - **Storage Account**: `tailspinsqlmistore`
+    - **Blob container**: `sql-backup`
+
+    ![Step 5 Database backup is shown with the 'My database backups are in an Azure Storage Blob Container' option selected, with the Storage account and sql-backup container selected for the location of the source database.](images/BM-Ex1-T5-Step10.png "Step 5: Database backup")
+
+15. In **Step 6: Azure Database Migration Service**, select **Create new** under **Azure Database Migration Service**.
+
+    ![Step 6 Azure Database Migration Service is shown with the Create new link under Azure Database Migration Service highlighted.](images/BM-Ex1-T5-Step11.png "Step 6 Azure Database Migration Service")
+
+16. In the **Create Azure Database Migration Service** pane, enter the following values, then select **Create**.
+
+    - **Resource group**: `tailspin-rg`.
     - **Name**: `tailspin-sql-migration`
+    
+    ![The Create Database Migration Service dialog is shown with Resource Group and Name for the Azure Database Migration Service to create entered.](images/BM-Ex1-T5-Step12.png "Create Database Migration Service dialog")
 
-    ![The Create Database Migration Service dialog is shown with Resource Group and Name for the Azure Database Migration Service to create entered.](images/azure-data-studio-migrate-create-migration-service.png "Create Database Migration Service dialog")
+17. Once the Database Migration Service has been created, select **Done**.
 
-14. Once the Database Migration Service has been created, select **Done**.
+    ![Step 6 Azure Database Migration Service is created.](images/BM-Ex1-T5-Step13.png "Step 6: Azure Database Migration Service")
 
-15. In **Step 6: Azure Database Migration Service**, select the **Azure Database Migration Service** that was created, then select **Next**.
+18. In **Step 6: Azure Database Migration Service**, select the **Azure Database Migration Service** that was created, then select **Next**.
 
-    ![Step 6 Azure Database Migration Service is shown with the Azure Database Migration Service field now entered.](images/azure-data-studio-migrate-step-6.png "Step 6: Azure Database Migration Service")
+    ![Step 6 Azure Database Migration Service is shown with the Azure Database Migration Service field now entered.](images/BM-Ex1-T5-Step14.png "Step 6: Azure Database Migration Service")
 
-16. In **Step 7: Summary**, review all the configurations chosen, then select **Start migration**.
+19. In **Step 7: Summary**, review all the configurations chosen, then select **Start migration**.
 
-    ![Step 7 Summary is shown with all the selected values displayed for review.](images/azure-data-studio-migrate-step-7.png "Step 7: Summary")
+    ![Step 7 Summary is shown with all the selected values displayed for review.](images/BM-Ex1-T5-Step15.png "Step 7: Summary")
 
-17. Azure Data Studio will now show **Database migrations in progress - 1**.
+20. Azure Data Studio will now show **Database migrations in progress - 1**.
 
-    ![The Azure SQL Migration pane in Azure Data Studio shows there is 1 data migration in progress.](images/azure-data-studio-database-migrations-in-progress.png "Azure Data Studio showing there is 1 data migration in progress")
+    ![The Azure SQL Migration pane in Azure Data Studio shows there is 1 data migration in progress.](images/BM-Ex1-T5-Step16.png "Azure Data Studio showing there is 1 data migration in progress")
 
-18. In the Azure Portal, navigate to the **Azure Database Migration Service** that was created (named similar to `tailspin-sql-migration`), then select **Migrations** and the **WideWorldImporters** migration.
+21. In the Azure Portal, navigate to the **Azure Database Migration Service** that was created `tailspin-sql-migration` under `tailspin-rg`, then select **Migrations** and the **WideWorldImporters** migration.
 
-    ![The Azure Database Migration Service is shown within the Azure Portal displaying the new database migration in the list of Migrations.](images/azure-database-migration-service-inprogress.png "Azure Database Migration Service list of migrations.")
+    ![The Azure Database Migration Service is shown within the Azure Portal displaying the new database migration in the list of Migrations.](images/BM-Ex1-T5-Step17.png "Azure Database Migration Service list of migrations.")
 
-19. The **WideWorldImporters** migration shows the current status of the migration as `InProgress`. Notice the **Currently restoring files** should say **All backups restored** once the database backup has been restored. Then select **Complete cutover** at the top.
+22. The **WideWorldImporters** migration shows the current status of the migration as `InProgress`. Notice the **Currently restoring files** should say **All backups restored** once the database backup has been restored. Then select **Complete cutover** at the top.
 
-    ![The WideWorldImporters migration is shown within the Azure Portal having a migration status of InProgress](images/wideworldimporters-migration-inprogress.png "WideWorldImporters migration showing status as InProgress")
+    ![The WideWorldImporters migration is shown within the Azure Portal having a migration status of InProgress](images/BM-Ex1-T5-Step18.png "WideWorldImporters migration showing status as InProgress")
 
-20. In the **Complete cutover** prompt, select the box for **I confirm there are no additional log backups...**, then select **Complete cutover**.
+23. In the **Complete cutover** prompt, select the box for **I confirm there are no additional log backups to provide and want to complete cutover.**, then select **Complete cutover**.
 
-    ![The Complete cutover prompt is shown with the confirmation box checked and the Complete cutover button highlighted.](images/wideworldimporters-migration-complete-cutover.png "Complete cutover")
+    ![The Complete cutover prompt is shown with the confirmation box checked and the Complete cutover button highlighted.](images/BM-Ex1-T5-Step19.png "Complete cutover")
 
-21. The **WideWorldImporters** Migration will now show the status of **Completing**. This will take a few minutes to complete.
+24. The **WideWorldImporters** Migration will now show the status of **Completing**. This will take a few minutes to complete.
 
-    ![The WideWorldImporters migration is shown in the Azure Portal having a migration status of Completing.](images/wideworldimporters-migration-completing.png "WideWorldImporters migration showing status of Completing")
+    ![The WideWorldImporters migration is shown in the Azure Portal having a migration status of Completing.](images/BM-Ex1-T5-Step20.png "WideWorldImporters migration showing status of Completing")
 
-22. Once the cutover has been completed, the **WideWorldImporters** migration will show a status of **Succeeded**.
+25. Once the cutover has been completed, the **WideWorldImporters** migration will show a status of **Succeeded**.
 
-    ![The WideWorldImporters migration is shown in the Azure Portal with a migration status of succeeded.](images/wideworldimporters-migration-succeeded.png "WideWorldImporters migration showing status of succeeded")
+    ![The WideWorldImporters migration is shown in the Azure Portal with a migration status of succeeded.](images/BM-Ex1-T5-Step21.png "WideWorldImporters migration showing status of succeeded")
 
-23. Within the Azure Portal, navigate to the **Azure SQL Managed Instance** that was created previously.
+26. Within the Azure Portal, type **Azure SQL Managed Instance** on the **Search resources, services and docs** and select **SQL managed instances**.
 
-24. When the SQL Server database migration to Azure SQL MI has completed, you will see the **WideWorldImporters** database shown with an **Online** status.
+      ![Search for SQL MI.](images/BM-Ex1-T5-Step22.png "Managed Instance")
+ 
+27. Under **SQL managed instances**, select **sqlmi--cus** Managed Instance.
 
-    ![The Azure SQL Managed Instance resource is shown in the Azure Portal with the WideWorldImporters migration showing a Status of Online.](images/azure-portal-sql-mi-database-status-online.png "Azure SQL MI in Azure Portal showing the WideWorldImporters database in Online status")
+      ![Select sqlmi--cus SQL MI.](images/BM-Ex1-T5-Step22.1.png "Managed Instance")
+
+28. When the SQL Server database migration to Azure SQL MI has completed, you will see the **WideWorldImporters** database shown with an **Online** status.
+
+    ![The Azure SQL Managed Instance resource is shown in the Azure Portal with the WideWorldImporters migration showing a Status of Online.](images/BM-Ex1-T5-Step23.png "Azure SQL MI in Azure Portal showing the WideWorldImporters database in Online status")
 
 ## Exercise 2: Create VM to migrate web application
 
