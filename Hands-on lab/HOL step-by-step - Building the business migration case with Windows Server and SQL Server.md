@@ -516,13 +516,15 @@ In this task, you will create a new Windows Server 2022: Azure Edition virtual m
 
 2. On the **Home** page within the Azure Portal, towards the top, select **Create a resource**.
 
-    ![The Home page of the Azure Portal is shown with the 'Create a resource' link highlighted.](images/azure-portal-home-create-resource-link.png "Create a resource on Azure Portal Home page")
+    ![The Home page of the Azure Portal is shown with the 'Create a resource' link highlighted.](images/Ex2-T1-S2.png "Create a resource on Azure Portal Home page")
 
 3. Within the **Search services and marketplace** field, type **Windows Server** and press Enter to search the marketplace, then select **Windows Server**.
 
-    ![Windows Server is highlighted within the Azure Marketplace search results.](images/azure-marketplace-windows-server.png "Windows Server is highlighted")
+      ![Windows Server is highlighted within the Azure Marketplace search results.](images/Ex2-T1-S3.png "Windows Server is highlighted")
 
 4. Choose **Windows Server 2022 Datacenter: Azure Edition**, then select **Create**.
+
+      ![Windows Server is highlighted within the Azure Marketplace search results.](images/Ex2-T1-S4.png "Windows Server is highlighted")
 
 5. On the **Create a virtual machine** pane, set the following values to configure the new virtual machine:
 
@@ -531,42 +533,33 @@ In this task, you will create a new Windows Server 2022: Azure Edition virtual m
     - **Region**: Select the Azure Region that was used to create the resource group.
     - **Image**: Verify the image is set to **Windows Server 2022 Datacenter: Azure Edition - Gen 2**.
 
-    ![The Create a virtual machine pane is shown with values entered and filed highlighted.](images/create-virtual-machine-windows-server-image-set.png "Create a virtual machine with field set")
+      ![The Create a virtual machine pane is shown with values entered and filed highlighted.](images/Ex2-T1-S5.png "Create a virtual machine with field set")
 
-6. Set the **Size** field by selecting the **Standard_D4s_v5** virtual machine size.
+6. Set the **Size** field by selecting the **Standard_D4s_v5** virtual machine size. Set a **Username** and **Password** for the **Administrator account** for the VM.
 
-    ![The Virtual Machine Size field is shown with the desired size selected.](images/create-virtual-machine-size-set.png "VM size is set")
+     - **Username**: `demouser`
+     - **Password**: `demo!pass123`
+      
+      ![The Virtual Machine Size field is shown with the desired size selected.](images/Ex2-T1-S6.png "VM size is set")
 
-7. Set a **Username** and **Password** for the **Administrator account** for the VM.
+7. Select **Next** until you are navigated to the **Networking** tab of the **Create a virtual machine** page. Provision the VM in the Spoke VNet in Azure by selecting the following values under the **Network interface** section:
 
-    > **Note**: Be sure to save the Username and Password for the VM, so it can be used later. A recommendation for easy to remember Username is `demouser` and Password is `demo!pass123`.
-
-8. Select **Next** until you are navigated to the **Networking** tab of the **Create a virtual machine** page.
-
-    ![The Networking tab of the Create a virtual machine pane is selected.](images/create-virtual-machine-networking-tab-selected.png "Networking tab is selected")
-
-9. Provision the VM in the Spoke VNet in Azure by selecting the following values under the **Network interface** section:
-
-    - **Virtual network**: Select the Spoke VNet that was created for this lab. Its name will be similar to `tailspin-spoke-vnet`.
-    - **Subnet**: `default`
+    - **Virtual network**: `vnet-sqlmi--cus`
+    - **Subnet**: `Management1`
     - **Public IP**: `None`
 
-    ![The Networking tab has the Network interface values selected for the Virtual network, Subnet, and Public IP to connect to the VM.](images/create-virtual-machine-networking-values-set.png "Virtual Network, Subnet, and Public IP values are set")
+     ![The Networking tab has the Network interface values selected for the Virtual network, Subnet, and Public IP to connect to the VM.](images/Ex2-T1-S8.png "Virtual Network, Subnet, and Public IP values are set")
 
-10. Set the following values to ensure that HTTPS traffic will be allowed to connect to the VM:
+8. Set the following values to ensure that HTTPS traffic will be allowed to connect to the VM and select **Review + create** to review the virtual machine settings.
 
-    - **Public inbound ports**: `Allow selected ports`
-    - **Select inbound ports**: `HTTPS (443)`
+   - **Public inbound ports**: `Allow selected ports`
+   - **Select inbound ports**: `HTTPS (443)`
 
-    ![The Public inbound ports field is set to Allow selected ports and the Select inbound ports has HTTPS 443 selected.](images/create-virtual-network-https-traffic-allowed.png "Networking inbound ports set to allow HTTPS traffic")
+    ![The Public inbound ports field is set to Allow selected ports and the Select inbound ports has HTTPS 443 selected.](images/Ex2-T1-S10.1.png "Networking inbound ports set to allow HTTPS traffic")
 
-11. Select **Review + create** to review the virtual machine settings.
+9. Select **Create** to begin provisioning the virtual machine once the **Validation passed** message is shown.
 
-    ![The Review + create button for the Create a virtual machine pane is shown and highlighted.](images/create-virtual-network-review-create-button.png "Review + create button")
-
-12. Select **Create** to begin provisioning the virtual machine once the **Validation passed** message is shown.
-
-    ![The Validation passed message is shown and the Create button is highlighted.](images/create-virtual-machine-create-button.png "Validation passed and Create button")
+     ![The Validation passed message is shown and the Create button is highlighted.](images//Ex2-T1-S12.png "Validation passed and Create button")
 
 ### Task 2: Check remote desktop access
 
