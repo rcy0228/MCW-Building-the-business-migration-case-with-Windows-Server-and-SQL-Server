@@ -638,27 +638,29 @@ In this exercise, you will Azure Arc-enable a Windows Server VM that Tailspin ha
 
 ### Task 2: Run script to add server to Azure Arc
 
-1. In the Azure Portal, navigate to the Resource Group for the lab, then select the **`tailspin-onprem-hyperv-vm`** virtual machine resource. This is the simulated on-premises Hyper-V host VM.
+1. In the Azure Portal, navigate to the Resource Group **tailspin-rg**, then select the `tailspin-onprem-hyperv-vm` virtual machine resource. This is the simulated on-premises Hyper-V host VM.
 
-    ![The resource group for the lab is shown with the simulated on-premises Hyper-V Host VM highlighted in the resource list.](images/azure-portal-lab-rg-hyperv-vm.png "Resource group with simulated on-premises Hyper-V Host VM highlighted")
+    ![The resource group for the lab is shown with the simulated on-premises Hyper-V Host VM highlighted in the resource list.](images/Ex3-T2-S1.png "Resource group with simulated on-premises Hyper-V Host VM highlighted")
 
 2. On the left, select **Bastion** under **Operations**.
 
-    ![The virtual machine pane for the simulated on-premises hyper-v host VM is shown with the Bastion link under Operations highlighted.](images/azure-portal-hyper-v-host-vm-bastion-link.png "Bastion link under Operations")
+    ![The virtual machine pane for the simulated on-premises hyper-v host VM is shown with the Bastion link under Operations highlighted.](images/Ex2-T2-S2.png "Bastion link under Operations")
 
 3. Enter the **Username** and **Password**, then select **Connect**.
 
-    ![The Bastion pane is shown for the VM with the Username and Password values entered and fields highlighted.](images/azure-portal-vm-bastion-username-password-entered.png "Bastion credentials shown entered")
+    ![The Bastion pane is shown for the VM with the Username and Password values entered and fields highlighted.](images/Ex3-T2-S3.png "Bastion credentials shown entered")
 
-    > **Note**: When the VM was created the credentials were set up as:
+    > **Note**: Credentials for logging in to the VM :
     - **Username**: `demouser`
     - **Password**: `demo!pass123`
 
 4. Once connected to the Hyper-V Host VM, open the **Start menu**, then search for and run the **Hyper-V Manager**.
 
+    ![Open Hyper-V.](images/Ex3-T2-S4.png "Hyper-v")
+
 5. Within the **Hyper-V Manager**, double-click the **OnPremVM** VM to connect to it.
 
-    ![The Hyper-V Manager is shown with the list of virtual machines displayed with the OnPremVM highlighted.](images/hyper-v-manager-vm-list.png "Hyper-V Manager list of VMs with OnPremVM shown")
+    ![The Hyper-V Manager is shown with the list of virtual machines displayed with the OnPremVM highlighted.](images/Ex3-T2-S5.png "Hyper-V Manager list of VMs with OnPremVM shown")
 
 6. Once connected to the **OnPremVM** VM within Hyper-V, sign in using the **Administrator** account and the password of `demo!pass123`.
 
@@ -671,11 +673,25 @@ In this exercise, you will Azure Arc-enable a Windows Server VM that Tailspin ha
     >
     > You may see a warning message when disabling it and re-enabling it, but it will still work to restore Internet Connection Sharing with the **OnPremVM** that is connected through the Host VM's network connection.
     >
-    > ![The Ethernet connection properties on the Hyper-V Host VM showing Internet Connection Sharing option highlighted.](images/windows-hyperv-network-connections-internet-connection-sharing.png "Ethernet Properties for Internet Connection Sharing")
+    > ![The Ethernet connection properties on the Hyper-V Host VM showing Internet Connection Sharing option highlighted.](images/Ex3-T2-S6.note.png "Ethernet Properties for Internet Connection Sharing")
 
+    ![Login to Onprem VM.](images/Ex3-T2-S6.png "Admin login")
+    
 7. Within the **OnPremVM**, open **Internet Explorer**, go to the following link to download the Windows Update for installing **PowerShell 5.1**, and run it. This will install PowerShell 5.1 on the Windows Server 2012 R2 VM, since this is the version of PowerShell required by the Azure Arc script.
 
     <https://go.microsoft.com/fwlink/?linkid=839516>
+    
+    - Click on **Open**.
+    
+    ![download the Windows Update for installing PowerShell 5.1.](images/Ex3-T2-S7.png "PowerShell 5.1")
+    
+    - Accept the license terms by clicking on **I Accept**. 
+    
+    ![download the Windows Update for installing PowerShell 5.1.](images/Ex3-T2-S7.1.png "PowerShell 5.1")
+    
+    - On **Download and Install Updates** click on **Restart Now**.
+    
+    ![download the Windows Update for installing PowerShell 5.1.](images/Ex3-T2-S7.2.png "PowerShell 5.1")
 
 8. Within the **OnPremVM**, open **Internet Explorer**, go to the following link to download the .NET Framework 4.8, and install it. The Azure Arc script will install the **Azure Connected Machine Agent** which requires **.NET Framework 4.6 or later**.
 
@@ -689,6 +705,9 @@ In this exercise, you will Azure Arc-enable a Windows Server VM that Tailspin ha
     > Be sure to restart the VM after installing the updates, before you continue with the .NET Framework install.
     >
     > ![The blocking issue warning of the .NET Framework installer is shown with the message for the blocking issue highlighted.](images/dot-net-framwork-blocking-issue.png "Blocking issue warning with message highlighted")
+    - Once the **.NET Framework** is installed on **Download and Install Updates** click on **Restart Now**.
+    
+     ![download the Windows Update for installing .NET Framework .](images/Ex3-T2-S7.2.png ".NET Framework")
 
 9. Within the **OnPremVM**, open the **Windows PowerShell ISE**, and create a new script file.
 
