@@ -714,14 +714,20 @@ In this exercise, you will Azure Arc-enable a Windows Server VM that Tailspin ha
 10. Paste in the contents of the Azure Arc `OnboardingScript.ps1` script that was previously downloaded.
 
     > **Note**: Within the Hyper-V Virtual Machine Connection window, you may need to use the **Clipboard** -> **Type clipboard text** menu option to paste into the **OnPremVM**.
+     
+     ![Run OnboardingScript.ps1 script .](images/Ex3-T2-S10.png "OnboardingScript.ps1")
 
 11. Run the full script. This will install the Azure Arc agent and Arc-enable the VM. When the script opens up a browser window, enter your credentials to authenticate with Azure.
 
     > **Note**: When the Azure Arc script opens a new browser window to authenticate you with Azure, be sure to use an Organization Account with permissions to create `Microsoft.HybridCompute/machines` resources. Using a Personal Account is not supported and will result in a `AZCM0042: Failed to Create Resource` error message.
+    
+    ![Azure credentials login .](images/Ex3-T2-S11.png "Azure credentials")
+    
+    ![Azure credentials login .](images/Ex3-T2-S11.1.png "Azure credentials")
 
 12. When the script finishes executing successfully, a message stating "**Connected machine to Azure**" will be shown, along with the Azure Portal resource URL for the Azure Arc-enabled Server.
 
-    ![The command line output of the Azure Arc script is shown that includes the Connected machine to Azure message showing the script executed successfully.](images/azure-arc-enabled-script-successful.png "Azure Arc script successful with Connected machine to Azure message")
+    ![The command line output of the Azure Arc script is shown that includes the Connected machine to Azure message showing the script executed successfully.](images/Ex3-T2-S12.png "Azure Arc script successful with Connected machine to Azure message")
 
 ### Task 3: Verify Azure Arc-enabled VM
 
