@@ -731,48 +731,22 @@ In this exercise, you will Azure Arc-enable a Windows Server VM that Tailspin ha
 
 ### Task 3: Verify Azure Arc-enabled VM
 
-1. In the Azure Portal, navigate to the Resource Group for the lab.
+1. In the Azure Portal, navigate to the Resource Group for the lab. Scroll down and locate the Azure resource of type **Server - Azure Arc** and select it.
 
-    ![The tailspin-rg Resource group for the lab is shown in the Azure Portal.](images/azure-portal-resource-group-tailspin-rg.png "tailspin-rg resource group")
-
-2. Scroll down and locate the Azure resource of type **Server - Azure Arc**. and select it.
-
-    ![The resources in the resource group are shown with the resource of type Server - Azure Arc highlighted.](images/resource-group-showing-server-azure-arc-resource.png "Azure Resource Group showing resource list with Server - Azure Arc resource")
+    ![The tailspin-rg Resource group for the lab is shown in the Azure Portal.](images/Ex3-T3-S1.png "tailspin-rg resource group")
 
     > **Note**: The on-premises VM has been Azure Arc-enabled and can be managed alongside other Azure resources. This is enabled by the **Azure Connected Machine Agent** running on the VM that facilitates the interaction between Azure and the Azure Arc-enabled VM.
 
-3. This is the **Server - Azure Arc** pane for the on-premises virtual machine that was just Azure Arc-enabled. The **Status** shows **Connected** to signify that the Azure Arc-enabled virtual machine is connected to Azure. Also, notice that the **Computer Name** and **Operating System** of the virtual machine are displayed.
+2. This is the **Server - Azure Arc** pane for the on-premises virtual machine that was just Azure Arc-enabled. The **Status** shows **Connected** to signify that the Azure Arc-enabled virtual machine is connected to Azure. Also, notice that the **Computer Name** and **Operating System** of the virtual machine are displayed.
 
-    ![The Server - Azure Arc pane in the Azure Portal is shown for the on-premises VM with status, computer name, and operating system values highlighted within the Essentials section.](images/azure-portal-server-azure-arc-enabled-vm.png "Azure Portal Server - Azure Arc pane for Azure Arc-enabled virtual machine")
+    ![The Server - Azure Arc pane in the Azure Portal is shown for the on-premises VM with status, computer name, and operating system values highlighted within the Essentials section.](images/Ex3-T3-S2.png "Azure Portal Server - Azure Arc pane for Azure Arc-enabled virtual machine")
 
-4. From here, there are several **Azure Arc** capabilities available to use for managing the Azure Arc-enabled virtual machine.
+3. From here, there are several **Azure Arc** capabilities available to use for managing the Azure Arc-enabled virtual machine.
 
-    ![The Capabilities section of the Server- Azure Arc pane is shown with the list of capabilities to choose from.](images/azure-portal-server-azure-arc-capabilities.png "Azure Arc capabilities listed on the Server - Azure Arc pane")
+    ![The Capabilities section of the Server- Azure Arc pane is shown with the list of capabilities to choose from.](images/Ex3-T3-S3.png "Azure Arc capabilities listed on the Server - Azure Arc pane")
 
-5. Select **Extensions** under **Settings**. This is where you can install Extensions on the Azure Arc-enabled virtual machine. For example, the **Custom Script Extension for Windows - Azure Arc** extension can be used to download PowerShell scripts and files from Azure storage, and launch a PowerShell script on the machine.
+4. Select **Extensions** under **Settings**. This is where you can install Extensions on the Azure Arc-enabled virtual machine. For example, the **Custom Script Extension for Windows - Azure Arc** extension can be used to download PowerShell scripts and files from Azure storage, and launch a PowerShell script on the machine.
 
-    ![The Extensions pane for the Server - Azure Arc resource is shown with the Extensions link under Settings highlighted.](images/azure-poral-server-azure-arc-extensions.png "Azure Portal Server - Azure Arc pane showing Extensions")
+    ![The Extensions pane for the Server - Azure Arc resource is shown with the Extensions link under Settings highlighted.](images/Ex3-T3-S4.png "Azure Portal Server - Azure Arc pane showing Extensions")
 
-## After the hands-on lab
 
-Duration: 15 minutes
-
-### Task 1: Delete resource group to remove the lab environment
-
-1. Go to the **Azure Portal**.
-
-2. Go to your **Resource groups**.
-
-3. Select the **Resource group** you created.
-
-    ![The Azure Portal is showing the list of resource groups in the Azure Subscription with the resource group for this lab highlighted.](images/azure-portal-resource-groups.png "Resource group list in Azure Portal")
-
-4. Select **Delete Resource group**.
-
-    ![The Resource group pane in the Azure Portal for the resource group for this lab is shown with the Delete resource group button highlighted.](images/azure-portal-resource-group-delete-button.png "Resource group pane with Delete button highlighted")
-
-5. Enter the name of the **Resource group** and select **Delete**.
-
-    ![The confirmation box for deleting the resource group is shown with the resource group name entered into the 'Type the resource group name' field to confirm the delete operation and the Delete button is highlighted.](images/azure-portal-resource-group-delete-confirm.png "Delete Resource group confirmation prompt")
-
-You should follow all steps provided *after* attending the Hands-on lab.
