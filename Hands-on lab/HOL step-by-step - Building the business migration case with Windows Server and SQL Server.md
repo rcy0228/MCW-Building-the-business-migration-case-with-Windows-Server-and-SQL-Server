@@ -383,23 +383,23 @@ In this exercise, you will go through the steps necessary to migrate Tailspin To
 
 3. In **Step 1: Database for assessment**, select the **WideWorldImporters** database, then select **Next**.
 
-    ![Step 1 Database for assessment step is shown with the WideWorldImporters database selected for assessment.](images/BM-Ex1-T5-S2.png "Step 1: Databases for assessment")
+    ![Step 1 Database for assessment step is shown with the WideWorldImporters database selected for assessment.](images/BM-Ex1-T5-S4.png "Step 1: Databases for assessment")
 
 4. In **Step 2: Assessment results and recommendations**, select the **Azure SQL Managed Instance** option.
 
-    ![Step 2 Assessment results and recommendations are shown with the Azure SQL target option of Azure SQL Managed Instance selected.](images/BM-Ex1-T5-S3.png "Step 2: Assessment results and recommendations")
+    ![Step 2 Assessment results and recommendations are shown with the Azure SQL target option of Azure SQL Managed Instance selected.](images/BM-Ex1-T5-S5.png "Step 2: Assessment results and recommendations")
 
 5. Scroll down and select the **View/Select** button to select a database.
 
-    ![The View/Select button to choose the Azure SQL Managed Instance to migrate to is highlighted.](images/BM-Ex1-T5-S4.png "View/Select Azure SQL Managed Instance button")
+    ![The View/Select button to choose the Azure SQL Managed Instance to migrate to is highlighted.](images/BM-Ex1-T5-S6.png "View/Select Azure SQL Managed Instance button")
 
 6. Select the **WideWorldImporters** database, and you should see a message stating "`No issues for migrating to Azure SQL Managed Instance.`", then select the **Select** button.
 
-    ![WideWorldImporters database selected and 'no issues' message shown.](images/BM-Ex1-T5-S5.png "No issues found message is shown")
+    ![WideWorldImporters database selected and 'no issues' message shown.](images/BM-Ex1-T5-S7.png "No issues found message is shown")
 
 7. Verify the **Azure SQL Managed Instance** target is selected, notice that it now shows **1 of 1 databases selected**, then select **Next**.
 
-    ![Step 2 Assessment results and recommendations are shown with Azure SQL Managed Instance option selected.](images/BM-Ex1-T5-S6.png "Step 2: Assessment results and recommendations")
+    ![Step 2 Assessment results and recommendations are shown with Azure SQL Managed Instance option selected.](images/BM-Ex1-T5-S8.png "Step 2: Assessment results and recommendations")
 
 8. In **Step 3: Azure SQL target**, enter connection information to your Azure Subscription and for the **Azure SQL Manage Instance** resource that was previously created, then select **Next**.
 
