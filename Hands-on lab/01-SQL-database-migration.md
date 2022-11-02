@@ -6,7 +6,7 @@ Tailspin Toys needs to migrate their on-premises SQL Server database to Azure SQ
 
 In this exercise, you will go through the steps necessary to migrate Tailspin Toys' on-premises SQL Server database to Azure SQL Managed Instance.
 
-    [SQL database migration](#exercise-1-sql-database-migration)
+   [SQL database migration](#exercise-1-sql-database-migration)
    
    - [Task 1: Review Creation of Azure SQL MI **(Read-Only)** ](#task-1-review-creation-of-azure-sql-mi-read-only)
    
