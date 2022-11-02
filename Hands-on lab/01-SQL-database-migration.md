@@ -6,6 +6,18 @@ Tailspin Toys needs to migrate their on-premises SQL Server database to Azure SQ
 
 In this exercise, you will go through the steps necessary to migrate Tailspin Toys' on-premises SQL Server database to Azure SQL Managed Instance.
 
+    [SQL database migration](#exercise-1-sql-database-migration)
+   
+   - [Task 1: Review Creation of Azure SQL MI **(Read-Only)** ](#task-1-review-creation-of-azure-sql-mi-read-only)
+   
+   - [Task 2: Install Data Migration Assistant](#task-2-install-data-migration-assistant)
+   
+   - [Task 3: Assess on-premises database compatibility](#task-3-assess-on-premises-database-compatibility)
+   
+   - [Task 4: Backup on-premises SQL database](#task-4-backup-on-premises-sql-database)
+   
+   - [Task 5: Migrate database to Azure SQL MI](#task-5-migrate-database-to-azure-sql-mi)
+
 ### Task 1: Review Creation of Azure SQL MI **(Read-Only)**
  
   > **Note**: This is a **Read-Only** task. As Deploying the new instance of Azure SQL Managed Instance may take about 6 hour to complete. We have already created a *Managed Instance* for you. You can review this task to understand how the Azure Managed Instance is created and continue from the next task.
