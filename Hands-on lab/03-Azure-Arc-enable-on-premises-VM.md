@@ -4,6 +4,14 @@ Duration: 45 minutes
 
 In this exercise, you will Azure Arc-enable a Windows Server VM that Tailspin has on-premises. This VM is being Arc-enabled since there are no plans to migrate it to Azure, but Tailspin would like to simplify the management of all their VMs in a single place. Azure Arc provides the functionality to manage Azure and on-premises VMs in a single place giving Tailspin Toys exactly what they are looking for to simplify VM management and administration.
 
+   - [Exercise 3: Azure Arc-enable on-premises VM](#exercise-3-azure-arc-enable-on-premises-vm)
+   
+       - [Task 1: Generate Azure Arc script to add server](#task-1-generate-azure-arc-script-to-add-server)
+    
+       - [Task 2: Run script to add server to Azure Arc](#task-2-run-script-to-add-server-to-azure-arc)
+    
+       - [Task 3: Verify Azure Arc-enabled VM](#task-3-verify-azure-arc-enabled-vm)
+
 ### Task 1: Generate Azure Arc script to add server
 
 1. Sign in to the [Azure Portal](https://portal.azure.com). 
