@@ -4,6 +4,10 @@ Duration: 30 minutes
 
 In this exercise, you will create a new Windows Server 2022: Azure Edition virtual machine (VM) that will be the destination for migrating the on-premises Web Application to Azure, and then you will use Azure Bastion to connect to the VM over Remote Desktop (RDP). Azure Bastion will allow secure remote connections to the VM for Administrators. Windows Server Azure Edition is a specific image of Windows Server with unique capabilities such as rebootless patching with Hotpatch, available only on Azure.
 
+- [Create VM to migrate web application](#exercise-2-create-vm-to-migrate-web-application)
+  - [Task 1: Create Windows Server 2022 Azure Edition VM for application hosting](#task-1-create-windows-server-2022-azure-edition-vm-for-application-hosting)
+  - [Task 2: Check remote desktop access](#task-2-check-remote-desktop-access)
+
 ### Task 1: Create Windows Server 2022 Azure Edition VM for application hosting
 
 In this task, you will create a new Windows Server 2022: Azure Edition virtual machine (VM) that will be the destination for migrating the on-premises Web Application to Azure.
