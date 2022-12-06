@@ -49,7 +49,7 @@ Duration: 30 minutes
 
 In this task, you will retrieve the Id for your user account / login from Azure AD. This will be needed in the next task so the ARM Template deployment can use this value.
 
-1. Sign in to the [Azure Portal](https://portal.azure.com). Ensure that you're using a subscription associated with the same resources you created during the Before the hands-on lab setup.
+1. Sign in to the [Azure Portal](https://portal.azure.com).
 
 2. At the top of the Azure Portal, select the **Cloud Shell** icon.
 
