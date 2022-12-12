@@ -80,7 +80,7 @@ Refer to the Before the hands-on lab setup guide manual before continuing to the
 
 ## Exercise 1: SQL database migration
 
-Duration: 90 minutes
+Duration: 75 minutes
 
 Tailspin Toys needs to migrate their on-premises SQL Server database to Azure SQL Managed Instance. This is part of the migration strategy defined to migrate Tailspin Toys workloads to Azure.
 
