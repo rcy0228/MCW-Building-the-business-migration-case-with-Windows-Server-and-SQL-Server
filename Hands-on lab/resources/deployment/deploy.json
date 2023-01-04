@@ -256,8 +256,8 @@
       },
       "properties": {
         "subnetId": "[format('{0}/subnets/AzureSQLMI', resourceId('Microsoft.Network/virtualNetworks', format('{0}vnet', variables('spokeNamePrefix'))))]",
-        "storageSizeInGB": 64,
-        "vCores": 8,
+        "storageSizeInGB": 32,
+        "vCores": 4,
         "licenseType": "LicenseIncluded",
         "hardwareFamily": "Gen5",
         "zoneRedundant": false,
